@@ -1,9 +1,11 @@
+Server
+```bash 
 cd mcount-server
-```javascript 
 npm run dev
 ```
     
-cd mcount-ui
+UI    
 ```javascript 
+cd mcount-ui
 npm run dev
 ```

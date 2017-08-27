@@ -24,9 +24,10 @@ module.exports = function(app, db) {
 
   app.post(map.bill.create.route, function(request, response) {
     const bill = {
-      title: request.body.title,
+      name: request.body.name,
       value: request.body.value
     };
+    console.log(request)
     map.bill.collection.insertOne(bill, (error, result) => {
       if (error) {
         response.send({ error: error });
@@ -66,7 +67,7 @@ module.exports = function(app, db) {
     const id = request.params.id;
     const details = { '_id': new ObjectID(id) };
     const bill = {
-      title: request.body.title,
+      name: request.body.name,
       value: request.body.value
     };
     map.bill.collection.updateOne(details, bill, function (error, result) {
